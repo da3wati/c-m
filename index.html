@@ -1,15 +1,9 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width,
-initial-scale=1.0,
-maximum-scale=1.0,
-user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <meta name="theme-color" content="#eee7dc">
 
@@ -23,261 +17,144 @@ rel="stylesheet">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
-
 <style>
 
-/* =========================================================
-   COLORS
-========================================================= */
-
 :root{
-
     --gold:#a77d3c;
-
     --gold-light:#d8bd88;
-
     --black:#11100e;
-
     --dark:#1b1815;
-
     --soft-black:#28231e;
-
 }
-
-
-/* =========================================================
-   RESET
-========================================================= */
 
 *{
-
     margin:0;
-
     padding:0;
-
     box-sizing:border-box;
-
 }
-
 
 html{
-
     scroll-behavior:smooth;
-
 }
-
 
 body{
-
     margin:0;
-
     font-family:'Amiri',serif;
-
     color:var(--black);
-
     background:#eee7dc;
-
     overflow-x:hidden;
-
     -webkit-font-smoothing:antialiased;
-
     -moz-osx-font-smoothing:grayscale;
-
     text-rendering:optimizeLegibility;
-
 }
-
 
 /* =========================================================
    BACKGROUND
 ========================================================= */
 
 body::before{
-
     content:"";
-
     position:fixed;
-
     inset:0;
-
     z-index:-10;
-
     background-image:
-
         linear-gradient(
             rgba(255,249,241,.58),
             rgba(255,249,241,.58)
         ),
-
         url("background.jpg");
-
     background-size:cover;
-
     background-position:center;
-
     background-repeat:no-repeat;
-
 }
-
 
 /* =========================================================
    COVER
 ========================================================= */
 
 #cover{
-
     position:fixed;
-
     inset:0;
-
     width:100%;
-
     height:100dvh;
-
     z-index:99999;
-
     background:#eee7dc;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     overflow:hidden;
-
     transition:
-
         opacity 1.2s ease,
-
         visibility 1.2s ease;
-
 }
-
 
 .cover-image{
-
     width:100%;
-
     height:100%;
-
     object-fit:cover;
-
     object-position:center;
-
     display:block;
-
     cursor:pointer;
-
 }
-
 
 .cover-hint{
-
     position:absolute;
-
     left:50%;
-
     bottom:34px;
-
     transform:translateX(-50%);
-
     padding:10px 25px;
-
     color:#fff;
-
     font-family:'Amiri',serif;
-
     font-size:16px;
-
     font-weight:700;
-
     white-space:nowrap;
-
     border-radius:30px;
-
     background:rgba(30,24,18,.34);
-
     border:1px solid rgba(255,255,255,.35);
-
     backdrop-filter:blur(10px);
-
     -webkit-backdrop-filter:blur(10px);
-
     animation:pulse 2s infinite;
-
 }
-
 
 @keyframes pulse{
-
     0%,100%{
-
         opacity:.65;
-
     }
-
     50%{
-
         opacity:1;
-
     }
-
 }
-
 
 /* =========================================================
    INVITATION
 ========================================================= */
 
 #invitation{
-
     display:none;
-
     width:100%;
-
     min-height:100vh;
-
 }
-
 
 /* =========================================================
    GENERAL SECTION
-   تم تقليل المسافات هنا
 ========================================================= */
 
 .section{
-
     position:relative;
-
     width:100%;
-
     min-height:auto;
-
     padding:55px 20px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     text-align:center;
-
 }
-
 
 .content{
-
     width:100%;
-
     max-width:650px;
-
     margin:auto;
-
 }
-
-
 
 .luxury-ornament{
     display:flex;
@@ -309,114 +186,69 @@ body::before{
 ========================================================= */
 
 .gold-line{
-
     width:75px;
-
     height:1px;
-
     margin:15px auto;
-
     background:
-
         linear-gradient(
             90deg,
             transparent,
             var(--gold),
             transparent
         );
-
 }
-
 
 /* =========================================================
    WELCOME
 ========================================================= */
 
 .bismillah{
-
     font-family:'Amiri',serif;
-
     font-size:29px;
-
     font-weight:700;
-
     color:var(--gold);
-
     margin-bottom:15px;
-
 }
-
 
 .quran{
-
     font-family:'Amiri',serif;
-
     font-size:23px;
-
     font-weight:700;
-
     line-height:1.9;
-
     color:#11100e;
-
 }
-
 
 .quran-author{
-
     margin-top:10px;
-
     font-size:16px;
-
     font-weight:700;
-
     color:#9b7438;
-
 }
-
 
 .welcome{
-
     margin-top:20px;
-
     font-size:19px;
-
     font-weight:700;
-
     line-height:1.9;
-
     color:#151311;
-
 }
-
 
 /* =========================================================
    NAMES
 ========================================================= */
 
 .names-section{
-
     min-height:auto;
-
     padding-top:45px;
-
     padding-bottom:50px;
-
 }
-
 
 .small-title{
-
     font-size:17px;
-
     font-weight:700;
-
     letter-spacing:2px;
-
     color:#9b7438;
-
 }
-
 
 .names{
     direction:ltr;
@@ -425,14 +257,17 @@ body::before{
     justify-content:center;
     flex-wrap:nowrap;
     white-space:nowrap;
-    gap:10px;
+    gap:8px;
+
+    /* تم تصغير الأسماء */
     font-family:'Cormorant Garamond',serif;
-    font-size:76px;
+    font-size:48px;
     font-weight:600;
     line-height:1;
     color:#11100e;
     margin-top:10px;
     letter-spacing:.3px;
+
     animation:namesReveal 1.1s cubic-bezier(.2,.7,.2,1) both;
 }
 
@@ -441,16 +276,16 @@ body::before{
 }
 
 .names .amp{
-    font-size:50px;
+    font-size:34px;
     font-weight:500;
     color:var(--gold);
-    margin:0 5px;
+    margin:0 4px;
     transform:translateY(-2px);
 }
 
 .names-section .gold-line{
     width:125px;
-    margin:20px auto 17px;
+    margin:18px auto 14px;
 }
 
 .names-section .gold-line::before,
@@ -468,25 +303,39 @@ body::before{
 }
 
 @keyframes namesReveal{
-    from{opacity:0; transform:translateY(18px) scale(.97);}
-    to{opacity:1; transform:translateY(0) scale(1);}
+    from{
+        opacity:0;
+        transform:translateY(18px) scale(.97);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
 }
 
+/* =========================================================
+   حضوركم يشرفنا
+========================================================= */
+
+.honor-text{
+    margin-top:4px;
+    font-size:22px;
+    font-weight:700;
+    line-height:1.8;
+    color:#9b7438;
+}
+
+/* =========================================================
+   INVITE TEXT
+========================================================= */
 
 .invite-text{
-
-    margin-top:20px;
-
+    margin-top:16px;
     font-size:19px;
-
     font-weight:700;
-
     line-height:1.9;
-
     color:#171411;
-
 }
-
 
 /* =========================================================
    DATE
@@ -511,10 +360,16 @@ body::before{
     justify-content:center;
     border:1px solid rgba(167,125,60,.72);
     border-radius:20px;
-    background:linear-gradient(145deg,rgba(255,252,246,.62),rgba(247,239,225,.38));
+    background:linear-gradient(
+        145deg,
+        rgba(255,252,246,.62),
+        rgba(247,239,225,.38)
+    );
     backdrop-filter:blur(10px);
     -webkit-backdrop-filter:blur(10px);
-    box-shadow:0 12px 32px rgba(40,30,20,.11), inset 0 0 0 1px rgba(255,255,255,.48);
+    box-shadow:
+        0 12px 32px rgba(40,30,20,.11),
+        inset 0 0 0 1px rgba(255,255,255,.48);
     position:relative;
     overflow:hidden;
 }
@@ -609,119 +464,68 @@ body::before{
     letter-spacing:1px;
 }
 
-
 .date-day{
-
     font-family:'Cormorant Garamond',serif;
-
     font-size:75px;
-
     font-weight:600;
-
     line-height:.85;
-
     color:#a77d3c;
-
 }
-
 
 .date-month{
-
     margin-top:8px;
-
     font-size:26px;
-
     font-weight:700;
-
     color:#151311;
-
 }
-
 
 .date-year{
-
     margin-top:1px;
-
     font-family:'Cormorant Garamond',serif;
-
     font-size:29px;
-
     font-weight:600;
-
     letter-spacing:5px;
-
     color:#171411;
-
 }
-
 
 .date-time{
-
     margin-top:8px;
-
     direction:ltr;
-
     font-family:'Cormorant Garamond',serif;
-
     font-size:30px;
-
     font-weight:600;
-
     color:#11100e;
-
 }
-
 
 /* =========================================================
    LOCATION
 ========================================================= */
 
 .location-section{
-
     min-height:auto;
-
     padding-top:50px;
-
     padding-bottom:55px;
-
 }
-
 
 .location-icon{
     width:65px;
     height:65px;
-
     margin:auto;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     border:1px solid var(--gold);
-
     border-radius:50%;
-
     color:var(--gold);
-
     font-size:29px;
-
 }
-
 
 .location-title{
-
     margin-top:12px;
-
     font-size:29px;
-
     font-weight:700;
-
     color:#11100e;
-
 }
-
 
 /* =========================================================
    HALL PHOTO
@@ -735,7 +539,13 @@ body::before{
     padding:7px;
     overflow:hidden;
     border-radius:9px;
-    background:linear-gradient(135deg,rgba(167,125,60,.75),rgba(216,189,136,.45),rgba(167,125,60,.75));
+    background:
+        linear-gradient(
+            135deg,
+            rgba(167,125,60,.75),
+            rgba(216,189,136,.45),
+            rgba(167,125,60,.75)
+        );
     box-shadow:0 18px 42px rgba(35,25,15,.20);
 }
 
@@ -749,21 +559,13 @@ body::before{
     z-index:2;
 }
 
-
 .hall-image{
-
     display:block;
-
     width:100%;
-
     height:310px;
-
     object-fit:cover;
-
     object-position:center;
-
 }
-
 
 .hall-image-wrapper::after{
     content:"✦";
@@ -777,49 +579,28 @@ body::before{
     text-shadow:0 1px 5px rgba(0,0,0,.25);
 }
 
-
 .location-name{
-
     margin-top:3px;
-
     font-size:27px;
-
     font-weight:700;
-
     color:#9b7438;
-
 }
-
 
 .location-city{
-
     margin-top:1px;
-
     font-size:19px;
-
     font-weight:700;
-
     color:#171411;
-
 }
-
 
 .location-time{
-
     margin-top:7px;
-
     direction:ltr;
-
     font-family:'Cormorant Garamond',serif;
-
     font-size:31px;
-
     font-weight:600;
-
     color:#11100e;
-
 }
-
 
 /* =========================================================
    QR
@@ -828,69 +609,39 @@ body::before{
 .qr-wrapper{
     width:190px;
     height:190px;
-
     padding:10px;
-
     margin:20px auto 10px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     background:#fff;
-
     border:1px solid rgba(167,125,60,.55);
-
     box-shadow:
-
         0 10px 30px rgba(40,30,20,.12);
-
 }
-
 
 #qrcode{
-
     width:160px;
-
     height:160px;
-
 }
-
 
 .qr-text{
-
     font-size:15px;
-
     font-weight:700;
-
     color:#171411;
-
 }
-
 
 .map-button{
     display:inline-flex;
-
     align-items:center;
-
     justify-content:center;
-
     margin-top:15px;
-
     padding:10px 27px;
-
     border:1px solid var(--gold);
-
     border-radius:30px;
-
     background:rgba(255,255,255,.30);
-
     color:#654b26;
-
     text-decoration:none;
-
     font-size:18px;
     font-weight:700;
     box-shadow:0 8px 20px rgba(60,45,25,.08);
@@ -907,266 +658,150 @@ body::before{
 ========================================================= */
 
 .countdown-section{
-
     min-height:auto;
-
     padding-top:50px;
-
     padding-bottom:55px;
-
 }
-
 
 .countdown-title{
-
     font-size:30px;
-
     font-weight:700;
-
     color:#11100e;
-
 }
-
 
 .countdown-subtitle{
-
     margin-top:5px;
-
     font-size:17px;
-
     font-weight:700;
-
     color:#27221d;
-
 }
-
 
 .countdown{
-
     direction:ltr;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     flex-wrap:wrap;
-
     gap:9px;
-
     margin-top:25px;
-
 }
-
 
 .time{
     width:76px;
-
     height:76px;
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
-
     justify-content:center;
-
     border-radius:50%;
-
     border:1px solid rgba(167,125,60,.7);
-
     background:rgba(255,255,255,.43);
-
     backdrop-filter:blur(6px);
-
     -webkit-backdrop-filter:blur(6px);
-
 }
-
 
 .time span:first-child{
-
     font-family:'Cormorant Garamond',serif;
-
     font-size:27px;
-
     font-weight:600;
-
     line-height:1;
-
     color:#11100e;
-
 }
-
 
 .time span:last-child{
-
     margin-top:4px;
-
     font-size:12px;
-
     font-weight:700;
-
     color:#9b7438;
-
 }
-
 
 /* =========================================================
    FINAL
 ========================================================= */
 
 .final-section{
-
     min-height:auto;
-
     padding-top:55px;
-
     padding-bottom:70px;
-
 }
-
 
 .final-title{
-
     font-family:'Cormorant Garamond',serif;
-
     font-size:47px;
-
     font-weight:600;
-
     color:#9b7438;
-
 }
-
 
 .final-text{
-
     margin-top:18px;
-
     font-size:19px;
-
     font-weight:700;
-
     line-height:2;
-
     color:#171411;
-
 }
-
 
 .signature{
-
     margin-top:25px;
-
     direction:ltr;
-
     font-family:'Cormorant Garamond',serif;
-
     font-size:42px;
-
     font-weight:600;
-
     color:#11100e;
-
 }
-
 
 /* =========================================================
    MUSIC
 ========================================================= */
 
 .music-button{
-
     position:fixed;
-
     right:18px;
-
     top:20px;
-
     z-index:9000;
-
     width:50px;
-
     height:50px;
-
     display:none;
-
     align-items:center;
-
     justify-content:center;
-
     border-radius:50%;
-
     border:1px solid rgba(167,125,60,.75);
-
     background:rgba(255,255,255,.82);
-
     backdrop-filter:blur(10px);
-
     -webkit-backdrop-filter:blur(10px);
-
     color:#a77d3c;
-
     font-size:20px;
-
     cursor:pointer;
-
 }
-
 
 .music-button.playing{
-
     animation:rotateMusic 4s linear infinite;
-
 }
-
 
 @keyframes rotateMusic{
-
     from{
-
         transform:rotate(0deg);
-
     }
-
     to{
-
         transform:rotate(360deg);
-
     }
-
 }
-
 
 /* =========================================================
    ANIMATION
 ========================================================= */
 
 .fade-up{
-
     opacity:0;
-
     transform:translateY(20px);
-
     transition:
-
         opacity .8s ease,
-
         transform .8s ease;
-
 }
-
 
 .fade-up.show{
-
     opacity:1;
-
     transform:translateY(0);
-
 }
-
 
 /* =========================================================
    MOBILE
@@ -1175,51 +810,39 @@ body::before{
 @media(max-width:500px){
 
     .section{
-
         padding-left:17px;
-
         padding-right:17px;
-
     }
-
 
     .bismillah{
-
         font-size:25px;
-
     }
-
 
     .quran{
-
         font-size:20px;
-
         line-height:1.9;
-
     }
-
 
     .welcome{
-
         font-size:18px;
-
         line-height:1.9;
-
     }
 
-
     .names{
-        font-size:52px;
-        gap:4px;
+        font-size:40px;
+        gap:3px;
         white-space:nowrap;
     }
 
-
     .names .amp{
-        font-size:40px;
+        font-size:29px;
         margin:0 2px;
     }
 
+    .honor-text{
+        font-size:20px;
+        margin-top:3px;
+    }
 
     .date-box{
         gap:8px;
@@ -1260,10 +883,6 @@ body::before{
 
     .date-value.time-value{
         font-size:27px;
-    }
-
-    .invite-text{
-        font-size:18px;
     }
 
     .date-box{
@@ -1316,102 +935,60 @@ body::before{
         font-size:30px;
     }
 
-
     .date-day{
-
         font-size:67px;
-
     }
-
 
     .hall-image{
-
         height:260px;
-
     }
-
 
     .location-title{
-
         font-size:27px;
-
     }
-
 
     .location-name{
-
         font-size:25px;
-
     }
-
 
     .countdown{
-
         gap:7px;
-
     }
-
 
     .time{
-
         width:68px;
-
         height:68px;
-
     }
-
 
     .time span:first-child{
-
         font-size:25px;
-
     }
-
 
     .final-title{
-
         font-size:42px;
-
     }
-
 
     .final-text{
-
         font-size:18px;
-
     }
-
 
     .signature{
-
         font-size:38px;
-
     }
-
 }
 
 </style>
-
 </head>
 
-
 <body>
-
 
 <!-- =====================================================
      MUSIC
 ===================================================== -->
 
-<audio id="weddingMusic"
-       loop
-       preload="auto">
-
-    <source src="music.mp3"
-            type="audio/mpeg">
-
+<audio id="weddingMusic" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
 </audio>
-
-
 
 <!-- =====================================================
      COVER
@@ -1425,22 +1002,16 @@ body::before{
         alt="Chaima & Mohamed">
 
     <div class="cover-hint">
-
         اضغط لفتح الدعوة
-
     </div>
 
 </div>
-
-
 
 <!-- =====================================================
      INVITATION
 ===================================================== -->
 
 <main id="invitation">
-
-
 
 <!-- =====================================================
      WELCOME
@@ -1450,50 +1021,34 @@ body::before{
 
     <div class="content fade-up">
 
-
         <div class="bismillah">
-
             بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ
-
         </div>
-
 
         <div class="gold-line"></div>
 
-
         <div class="quran">
-
             ﴿وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم
             مِّنْ أَنفُسِكُمْ أَزْوَاجًا
             لِّتَسْكُنُوا إِلَيْهَا
             وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
             ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ
             لِّقَوْمٍ يَتَفَكَّرُونَ﴾
-
         </div>
-
 
         <div class="quran-author">
-
             صدق الله العظيم
-
         </div>
 
-
         <p class="welcome">
-
             بكل حب وفرح، وبقلوب يملؤها السرور،
             يسعدنا أن نشارككم أجمل لحظات العمر،
             ونتشرف بحضوركم لمشاركتنا فرحة زفاف
-
         </p>
-
 
     </div>
 
 </section>
-
-
 
 <!-- =====================================================
      NAMES
@@ -1503,7 +1058,6 @@ body::before{
 
     <div class="content fade-up">
 
-
         <div class="small-title">
             دعوة زفاف
         </div>
@@ -1512,7 +1066,7 @@ body::before{
             <span></span><i>✦</i><span></span>
         </div>
 
-
+        <!-- الأسماء أصبحت أصغر -->
         <div class="names">
 
             <span>Chaima</span>
@@ -1523,57 +1077,68 @@ body::before{
 
         </div>
 
-
         <div class="gold-line"></div>
 
+        <!-- الجملة الجديدة -->
+        <div class="honor-text">
+            حضوركم يشرفنا
+        </div>
 
         <p class="invite-text">
-
             في يومٍ مميز، يجتمع قلبان
             ليبدآ معًا أجمل فصول الحياة،
             ويسعدنا أن تكونوا بيننا
             لتشاركونا هذه اللحظة الغالية.
-
         </p>
-
 
         <div class="date-box">
 
             <div class="date-card">
+
                 <div class="date-icon" aria-label="التاريخ">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-        <rect x="3.5" y="5" width="17" height="15" rx="2"></rect>
-        <path d="M7 3.5v4M17 3.5v4M3.5 9.5h17"></path>
-        <path d="M7.5 13h.01M12 13h.01M16.5 13h.01M7.5 16.5h.01M12 16.5h.01"></path>
-    </svg>
-</div>
-                <div class="date-label">التاريخ</div>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3.5" y="5" width="17" height="15" rx="2"></rect>
+                        <path d="M7 3.5v4M17 3.5v4M3.5 9.5h17"></path>
+                        <path d="M7.5 13h.01M12 13h.01M16.5 13h.01M7.5 16.5h.01M12 16.5h.01"></path>
+                    </svg>
+                </div>
+
+                <div class="date-label">
+                    التاريخ
+                </div>
+
                 <div class="date-value" dir="ltr">
                     <span class="date-number">20</span>
                     <span class="date-month">جانفي</span>
                     <span class="date-year">2027</span>
                 </div>
+
             </div>
 
             <div class="date-card">
+
                 <div class="date-icon" aria-label="الساعة">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="12" cy="12" r="8.5"></circle>
-        <path d="M12 7.5v5l3.5 2"></path>
-    </svg>
-</div>
-                <div class="date-label">الساعة</div>
-                <div class="date-value time-value" dir="ltr">13:00</div>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="8.5"></circle>
+                        <path d="M12 7.5v5l3.5 2"></path>
+                    </svg>
+                </div>
+
+                <div class="date-label">
+                    الساعة
+                </div>
+
+                <div class="date-value time-value" dir="ltr">
+                    13:00
+                </div>
+
             </div>
 
         </div>
 
-
     </div>
 
 </section>
-
-
 
 <!-- =====================================================
      LOCATION
@@ -1583,25 +1148,15 @@ body::before{
 
     <div class="content fade-up">
 
-
         <div class="location-icon">
-
             ♡
-
         </div>
-
 
         <div class="location-title">
-
             مكان الاحتفال
-
         </div>
 
-
         <div class="gold-line"></div>
-
-
-        <!-- صورة القاعة -->
 
         <div class="hall-image-wrapper">
 
@@ -1612,43 +1167,25 @@ body::before{
 
         </div>
 
-
         <div class="location-name">
-
             صال ڨعڨاع
-
         </div>
-
 
         <div class="location-city">
-
             عين فكرون
-
         </div>
-
 
         <div class="location-time">
-
             13:00
-
         </div>
-
-
-        <!-- QR -->
 
         <div class="qr-wrapper">
-
             <div id="qrcode"></div>
-
         </div>
-
 
         <div class="qr-text">
-
             امسح الرمز للوصول إلى موقع القاعة
-
         </div>
-
 
         <a
             href="https://maps.app.goo.gl/vPsJ2JrEyJqckiq16"
@@ -1660,12 +1197,9 @@ body::before{
 
         </a>
 
-
     </div>
 
 </section>
-
-
 
 <!-- =====================================================
      COUNTDOWN
@@ -1675,103 +1209,43 @@ body::before{
 
     <div class="content fade-up">
 
-
         <div class="countdown-title">
-
             ننتظر هذا اليوم بشوق
-
         </div>
-
 
         <div class="gold-line"></div>
 
-
         <div class="countdown-subtitle">
-
             لم يتبقَ الكثير على موعد فرحتنا
-
         </div>
-
 
         <div class="countdown">
 
-
             <div class="time">
-
-                <span id="days">
-
-                    00
-
-                </span>
-
-                <span>
-
-                    يوم
-
-                </span>
-
+                <span id="days">00</span>
+                <span>يوم</span>
             </div>
 
-
             <div class="time">
-
-                <span id="hours">
-
-                    00
-
-                </span>
-
-                <span>
-
-                    ساعة
-
-                </span>
-
+                <span id="hours">00</span>
+                <span>ساعة</span>
             </div>
 
-
             <div class="time">
-
-                <span id="minutes">
-
-                    00
-
-                </span>
-
-                <span>
-
-                    دقيقة
-
-                </span>
-
+                <span id="minutes">00</span>
+                <span>دقيقة</span>
             </div>
 
-
             <div class="time">
-
-                <span id="seconds">
-
-                    00
-
-                </span>
-
-                <span>
-
-                    ثانية
-
-                </span>
-
+                <span id="seconds">00</span>
+                <span>ثانية</span>
             </div>
-
 
         </div>
-
 
     </div>
 
 </section>
-
-
 
 <!-- =====================================================
      FINAL
@@ -1781,16 +1255,11 @@ body::before{
 
     <div class="content fade-up">
 
-
         <div class="final-title">
-
             حضوركم فرحتنا
-
         </div>
 
-
         <div class="gold-line"></div>
-
 
         <p class="final-text">
 
@@ -1807,22 +1276,15 @@ body::before{
 
         </p>
 
-
         <div class="signature">
-
             Chaima &amp; Mohamed
-
         </div>
-
 
     </div>
 
 </section>
 
-
 </main>
-
-
 
 <!-- =====================================================
      MUSIC BUTTON
@@ -1836,8 +1298,6 @@ body::before{
     ♪
 
 </button>
-
-
 
 <script>
 
@@ -1864,32 +1324,21 @@ const musicButton =
 
 cover.addEventListener("click", function(){
 
-
     cover.style.opacity = "0";
-
     cover.style.visibility = "hidden";
-
 
     setTimeout(function(){
 
-
         cover.style.display = "none";
-
-
         invitation.style.display = "block";
-
-
         musicButton.style.display = "flex";
 
-
         music.play()
-
         .then(function(){
 
             musicButton.classList.add("playing");
 
         })
-
         .catch(function(error){
 
             console.log(
@@ -1899,9 +1348,7 @@ cover.addEventListener("click", function(){
 
         });
 
-
         revealSections();
-
 
     },1000);
 
@@ -1916,11 +1363,9 @@ musicButton.addEventListener("click", function(event){
 
     event.stopPropagation();
 
-
     if(music.paused){
 
         music.play()
-
         .then(function(){
 
             musicButton.classList.add("playing");
@@ -1928,11 +1373,9 @@ musicButton.addEventListener("click", function(event){
         });
 
     }
-
     else{
 
         music.pause();
-
         musicButton.classList.remove("playing");
 
     }
@@ -1945,27 +1388,20 @@ musicButton.addEventListener("click", function(event){
 ========================================================= */
 
 new QRCode(
-
     document.getElementById("qrcode"),
-
     {
-
         text:
-        "https://maps.app.goo.gl/vPsJ2JrEyJqckiq16",
+            "https://maps.app.goo.gl/vPsJ2JrEyJqckiq16",
 
         width:160,
-
         height:160,
 
         colorDark:"#11100e",
-
         colorLight:"#ffffff",
 
         correctLevel:
-        QRCode.CorrectLevel.H
-
+            QRCode.CorrectLevel.H
     }
-
 );
 
 
@@ -1979,14 +1415,11 @@ const weddingDate =
 
 function updateCountdown(){
 
-
     const now =
         new Date();
 
-
     const difference =
         weddingDate - now;
-
 
     if(difference <= 0){
 
@@ -2003,70 +1436,52 @@ function updateCountdown(){
             .textContent = "00";
 
         return;
-
     }
-
 
     const days =
         Math.floor(
-
             difference /
             (1000 * 60 * 60 * 24)
-
         );
-
 
     const hours =
         Math.floor(
-
             (difference %
             (1000 * 60 * 60 * 24)) /
             (1000 * 60 * 60)
-
         );
-
 
     const minutes =
         Math.floor(
-
             (difference %
             (1000 * 60 * 60)) /
             (1000 * 60)
-
         );
-
 
     const seconds =
         Math.floor(
-
             (difference %
             (1000 * 60)) /
             1000
-
         );
-
 
     document.getElementById("days")
         .textContent =
         String(days).padStart(2,"0");
 
-
     document.getElementById("hours")
         .textContent =
         String(hours).padStart(2,"0");
 
-
     document.getElementById("minutes")
         .textContent =
         String(minutes).padStart(2,"0");
-
 
     document.getElementById("seconds")
         .textContent =
         String(seconds).padStart(2,"0");
 
 }
-
 
 updateCountdown();
 
@@ -2082,14 +1497,11 @@ setInterval(
 
 function revealSections(){
 
-
     const elements =
         document.querySelectorAll(".fade-up");
 
-
     const observer =
         new IntersectionObserver(
-
             function(entries){
 
                 entries.forEach(
@@ -2107,13 +1519,10 @@ function revealSections(){
                 );
 
             },
-
             {
                 threshold:.08
             }
-
         );
-
 
     elements.forEach(
         function(element){
@@ -2128,5 +1537,5 @@ function revealSections(){
 </script>
 
 </body>
-
 </html>
+```
